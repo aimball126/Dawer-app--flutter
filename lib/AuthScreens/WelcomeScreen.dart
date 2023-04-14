@@ -70,7 +70,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             Get.to(LoginScreen());
                           },
                           child: Padding(padding: EdgeInsets.all(20),
-                            child:commonButton(null, ' تسجيل دخول', ColorResources.custom, ColorResources.whiteF6F) ,
+                            child:commonButton(null, ' تسجيل دخول', Colors.deepOrange, ColorResources.whiteF6F) ,
 
                           ),
                         ),
