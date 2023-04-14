@@ -20,11 +20,27 @@ UpdateCompany(){
       .doc(ReportDet.documentID)
       .update({
     //"companyId":User.documentID,
+
     "companyStatus":3
   }).then((result){
     print("new USer true");
   }).catchError((onError){
     print("onError");
+  });
+}
+
+
+Updatenum(){
+  print(User.documentID);
+  FirebaseFirestore.instance
+      .collection('companies')
+      .doc(User.documentID)
+      .update({
+    'numberOfOrederFiexd': FieldValue.increment(1),
+  }).then((result){
+    print("new companies  true");
+  }).catchError((onError){
+    print("onError companies");
   });
 }
 UpdateRemoveCompany(){
@@ -248,11 +264,12 @@ class _alertDialogState extends State<alertDialog2> {
 
                           color: ColorResources.custom,
                           onPressed: (){
-                            Get.back();
+
 
 
                               SnackBar snackBar;
                               UpdateCompany().then(
+                                  Updatenum(),
                                   snackBar = SnackBar(
                                     content: mediumText(
                                         'تم انهاء العملية بنجاح',
@@ -267,7 +284,7 @@ class _alertDialogState extends State<alertDialog2> {
                                     ),
                                   ),
                                   ScaffoldMessenger.of(context)
-                                      .showSnackBar(snackBar)
+                                      .showSnackBar(snackBar),   Get.back()
                               );
                               setState(() {
 

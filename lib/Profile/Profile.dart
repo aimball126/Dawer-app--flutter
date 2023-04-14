@@ -27,8 +27,6 @@ class _ProfileState extends State<Profile> {
     final _height = MediaQuery.of(context).size.height;
 
     final Stream<QuerySnapshot> products = FirebaseFirestore.instance.collection('users').snapshots();
-
-
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(

@@ -35,8 +35,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             centerTitle: true,
-            backgroundColor: ColorResources.custom,
-            title:  mediumText('عودة الحياة',ColorResources.white,18),
+            backgroundColor: Colors.deepOrange,
+            title:  mediumText('بيئتي',ColorResources.white,18),
           ),
           body:Stack(
             children: [
